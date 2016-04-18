@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "DYSlideView.h"
 
-@interface ViewController ()
+@interface ViewController () <DYSlideViewDelegate>
 
 @end
 
@@ -16,12 +17,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    DYSlideView *slideView = [[DYSlideView alloc] init];
+    [slideView setFrame:self.view.bounds];
+    
+    slideView.slideBarColor = [UIColor lightGrayColor];
+    slideView.slideBarHeight = 50;
+    
+    slideView.sliderColor = [UIColor redColor];
+    slideView.sliderHeight = 2;
+    slideView.sliderScale = 0.6;
+    
+    slideView.buttonNormalColor = [UIColor yellowColor];
+    slideView.buttonSelectedColor = [UIColor blackColor];
+    slideView.buttonTitleFont = [UIFont boldSystemFontOfSize:16.f];
+    
+    slideView.scrollViewBounces = YES;
+    
+    slideView.delegate = self;
+    [self.view addSubview:slideView];
+    
+}
+
+- (NSInteger)DY_numberOfViewControllersInSlideView {
+    return 4;
+}
+
+- (NSArray *)DY_titlesForViewControllersInSlideView {
+    return @[@"Tab1", @"Tab2", @"Tab3", @"Tab4"];
+}
+
+- (NSArray *)DY_viewControllersInSlideView {
+    return @[[self vcWithBackgroundColor:[UIColor whiteColor]],
+             [self vcWithBackgroundColor:[UIColor grayColor]],
+             [self vcWithBackgroundColor:[UIColor darkGrayColor]],
+             [self vcWithBackgroundColor:[UIColor blackColor]]];
+}
+
+- (UIViewController *)vcWithBackgroundColor:(UIColor *)backgroundColor {
+    UIViewController * vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = backgroundColor;
+    return vc;
+}
+
+- (void)DY_didSelectButtonAtIndex:(NSInteger)index {
+    NSLog(@"%s %li",__FUNCTION__ ,index);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
