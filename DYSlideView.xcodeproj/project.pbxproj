@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF5065A61CC4C4860079A6D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5065A51CC4C4860079A6D3 /* main.m */; };
+		DF5065A91CC4C4860079A6D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5065A81CC4C4860079A6D3 /* AppDelegate.m */; };
+		DF5065AC1CC4C4860079A6D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5065AB1CC4C4860079A6D3 /* ViewController.m */; };
+		DF5065AF1CC4C4860079A6D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5065AD1CC4C4860079A6D3 /* Main.storyboard */; };
+		DF5065B11CC4C4860079A6D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5065B01CC4C4860079A6D3 /* Assets.xcassets */; };
+		DF5065BF1CC4C4860079A6D3 /* DYSlideViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5065BE1CC4C4860079A6D3 /* DYSlideViewTests.m */; };
+		DF5065CA1CC4C4860079A6D3 /* DYSlideViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5065C91CC4C4860079A6D3 /* DYSlideViewUITests.m */; };
+		DF5065DC1CC4C6B20079A6D3 /* DYSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5065DB1CC4C6B20079A6D3 /* DYSlideView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DF5065BB1CC4C4860079A6D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF5065991CC4C4860079A6D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF5065A01CC4C4860079A6D3;
+			remoteInfo = DYSlideView;
+		};
+		DF5065C61CC4C4860079A6D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF5065991CC4C4860079A6D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF5065A01CC4C4860079A6D3;
+			remoteInfo = DYSlideView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DF5065A11CC4C4860079A6D3 /* DYSlideView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYSlideView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5065A51CC4C4860079A6D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DF5065A71CC4C4860079A6D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DF5065A81CC4C4860079A6D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DF5065AA1CC4C4860079A6D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DF5065AB1CC4C4860079A6D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DF5065AE1CC4C4860079A6D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF5065B01CC4C4860079A6D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF5065B51CC4C4860079A6D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5065BA1CC4C4860079A6D3 /* DYSlideViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYSlideViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5065BE1CC4C4860079A6D3 /* DYSlideViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYSlideViewTests.m; sourceTree = "<group>"; };
+		DF5065C01CC4C4860079A6D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5065C51CC4C4860079A6D3 /* DYSlideViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYSlideViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5065C91CC4C4860079A6D3 /* DYSlideViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYSlideViewUITests.m; sourceTree = "<group>"; };
+		DF5065CB1CC4C4860079A6D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5065DA1CC4C6B20079A6D3 /* DYSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYSlideView.h; sourceTree = "<group>"; };
+		DF5065DB1CC4C6B20079A6D3 /* DYSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYSlideView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF50659E1CC4C4860079A6D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5065B71CC4C4860079A6D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5065C21CC4C4860079A6D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF5065981CC4C4860079A6D3 = {
+			isa = PBXGroup;
+			children = (
+				DF5065D91CC4C6960079A6D3 /* Class */,
+				DF5065A31CC4C4860079A6D3 /* DYSlideView */,
+				DF5065BD1CC4C4860079A6D3 /* DYSlideViewTests */,
+				DF5065C81CC4C4860079A6D3 /* DYSlideViewUITests */,
+				DF5065A21CC4C4860079A6D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF5065A21CC4C4860079A6D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF5065A11CC4C4860079A6D3 /* DYSlideView.app */,
+				DF5065BA1CC4C4860079A6D3 /* DYSlideViewTests.xctest */,
+				DF5065C51CC4C4860079A6D3 /* DYSlideViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF5065A31CC4C4860079A6D3 /* DYSlideView */ = {
+			isa = PBXGroup;
+			children = (
+				DF5065A71CC4C4860079A6D3 /* AppDelegate.h */,
+				DF5065A81CC4C4860079A6D3 /* AppDelegate.m */,
+				DF5065AA1CC4C4860079A6D3 /* ViewController.h */,
+				DF5065AB1CC4C4860079A6D3 /* ViewController.m */,
+				DF5065AD1CC4C4860079A6D3 /* Main.storyboard */,
+				DF5065B01CC4C4860079A6D3 /* Assets.xcassets */,
+				DF5065B51CC4C4860079A6D3 /* Info.plist */,
+				DF5065A41CC4C4860079A6D3 /* Supporting Files */,
+			);
+			path = DYSlideView;
+			sourceTree = "<group>";
+		};
+		DF5065A41CC4C4860079A6D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF5065A51CC4C4860079A6D3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF5065BD1CC4C4860079A6D3 /* DYSlideViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF5065BE1CC4C4860079A6D3 /* DYSlideViewTests.m */,
+				DF5065C01CC4C4860079A6D3 /* Info.plist */,
+			);
+			path = DYSlideViewTests;
+			sourceTree = "<group>";
+		};
+		DF5065C81CC4C4860079A6D3 /* DYSlideViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DF5065C91CC4C4860079A6D3 /* DYSlideViewUITests.m */,
+				DF5065CB1CC4C4860079A6D3 /* Info.plist */,
+			);
+			path = DYSlideViewUITests;
+			sourceTree = "<group>";
+		};
+		DF5065D91CC4C6960079A6D3 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				DF5065DA1CC4C6B20079A6D3 /* DYSlideView.h */,
+				DF5065DB1CC4C6B20079A6D3 /* DYSlideView.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF5065A01CC4C4860079A6D3 /* DYSlideView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF5065CE1CC4C4860079A6D3 /* Build configuration list for PBXNativeTarget "DYSlideView" */;
+			buildPhases = (
+				DF50659D1CC4C4860079A6D3 /* Sources */,
+				DF50659E1CC4C4860079A6D3 /* Frameworks */,
+				DF50659F1CC4C4860079A6D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DYSlideView;
+			productName = DYSlideView;
+			productReference = DF5065A11CC4C4860079A6D3 /* DYSlideView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DF5065B91CC4C4860079A6D3 /* DYSlideViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF5065D11CC4C4860079A6D3 /* Build configuration list for PBXNativeTarget "DYSlideViewTests" */;
+			buildPhases = (
+				DF5065B61CC4C4860079A6D3 /* Sources */,
+				DF5065B71CC4C4860079A6D3 /* Frameworks */,
+				DF5065B81CC4C4860079A6D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF5065BC1CC4C4860079A6D3 /* PBXTargetDependency */,
+			);
+			name = DYSlideViewTests;
+			productName = DYSlideViewTests;
+			productReference = DF5065BA1CC4C4860079A6D3 /* DYSlideViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DF5065C41CC4C4860079A6D3 /* DYSlideViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF5065D41CC4C4860079A6D3 /* Build configuration list for PBXNativeTarget "DYSlideViewUITests" */;
+			buildPhases = (
+				DF5065C11CC4C4860079A6D3 /* Sources */,
+				DF5065C21CC4C4860079A6D3 /* Frameworks */,
+				DF5065C31CC4C4860079A6D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF5065C71CC4C4860079A6D3 /* PBXTargetDependency */,
+			);
+			name = DYSlideViewUITests;
+			productName = DYSlideViewUITests;
+			productReference = DF5065C51CC4C4860079A6D3 /* DYSlideViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF5065991CC4C4860079A6D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Dwarven;
+				TargetAttributes = {
+					DF5065A01CC4C4860079A6D3 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					DF5065B91CC4C4860079A6D3 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = DF5065A01CC4C4860079A6D3;
+					};
+					DF5065C41CC4C4860079A6D3 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = DF5065A01CC4C4860079A6D3;
+					};
+				};
+			};
+			buildConfigurationList = DF50659C1CC4C4860079A6D3 /* Build configuration list for PBXProject "DYSlideView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF5065981CC4C4860079A6D3;
+			productRefGroup = DF5065A21CC4C4860079A6D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF5065A01CC4C4860079A6D3 /* DYSlideView */,
+				DF5065B91CC4C4860079A6D3 /* DYSlideViewTests */,
+				DF5065C41CC4C4860079A6D3 /* DYSlideViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF50659F1CC4C4860079A6D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF5065B11CC4C4860079A6D3 /* Assets.xcassets in Resources */,
+				DF5065AF1CC4C4860079A6D3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5065B81CC4C4860079A6D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5065C31CC4C4860079A6D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF50659D1CC4C4860079A6D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF5065AC1CC4C4860079A6D3 /* ViewController.m in Sources */,
+				DF5065DC1CC4C6B20079A6D3 /* DYSlideView.m in Sources */,
+				DF5065A91CC4C4860079A6D3 /* AppDelegate.m in Sources */,
+				DF5065A61CC4C4860079A6D3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5065B61CC4C4860079A6D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF5065BF1CC4C4860079A6D3 /* DYSlideViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5065C11CC4C4860079A6D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF5065CA1CC4C4860079A6D3 /* DYSlideViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF5065BC1CC4C4860079A6D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF5065A01CC4C4860079A6D3 /* DYSlideView */;
+			targetProxy = DF5065BB1CC4C4860079A6D3 /* PBXContainerItemProxy */;
+		};
+		DF5065C71CC4C4860079A6D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF5065A01CC4C4860079A6D3 /* DYSlideView */;
+			targetProxy = DF5065C61CC4C4860079A6D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF5065AD1CC4C4860079A6D3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF5065AE1CC4C4860079A6D3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF5065CC1CC4C4860079A6D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DF5065CD1CC4C4860079A6D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF5065CF1CC4C4860079A6D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = DYSlideView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dwarven.DYSlideView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DF5065D01CC4C4860079A6D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = DYSlideView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dwarven.DYSlideView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DF5065D21CC4C4860079A6D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DYSlideViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dwarven.DYSlideViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYSlideView.app/DYSlideView";
+			};
+			name = Debug;
+		};
+		DF5065D31CC4C4860079A6D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DYSlideViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dwarven.DYSlideViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYSlideView.app/DYSlideView";
+			};
+			name = Release;
+		};
+		DF5065D51CC4C4860079A6D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DYSlideViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dwarven.DYSlideViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DYSlideView;
+			};
+			name = Debug;
+		};
+		DF5065D61CC4C4860079A6D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DYSlideViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dwarven.DYSlideViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DYSlideView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF50659C1CC4C4860079A6D3 /* Build configuration list for PBXProject "DYSlideView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF5065CC1CC4C4860079A6D3 /* Debug */,
+				DF5065CD1CC4C4860079A6D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF5065CE1CC4C4860079A6D3 /* Build configuration list for PBXNativeTarget "DYSlideView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF5065CF1CC4C4860079A6D3 /* Debug */,
+				DF5065D01CC4C4860079A6D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF5065D11CC4C4860079A6D3 /* Build configuration list for PBXNativeTarget "DYSlideViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF5065D21CC4C4860079A6D3 /* Debug */,
+				DF5065D31CC4C4860079A6D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF5065D41CC4C4860079A6D3 /* Build configuration list for PBXNativeTarget "DYSlideViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF5065D51CC4C4860079A6D3 /* Debug */,
+				DF5065D61CC4C4860079A6D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF5065991CC4C4860079A6D3 /* Project object */;
+}
