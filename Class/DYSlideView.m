@@ -10,7 +10,6 @@
 
 @interface DYSlideView () <UIScrollViewDelegate> {
     NSInteger _numberOfViewControllers;
-    NSArray * _titlesForViewControllers;
     BOOL _didSelectItemAtIndexDefined;
     UIView * _slideBar;
     UIView * _slider;
@@ -48,7 +47,6 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     _numberOfViewControllers = [self.delegate DY_numberOfViewControllersInSlideView];
-    _titlesForViewControllers = [self.delegate DY_titlesForViewControllersInSlideView];
     [self addSlideBar];
     [self addScrollView];
     [self updateSelectedButton];
@@ -77,7 +75,7 @@
         [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
         [button.titleLabel setFont:_buttonTitleFont];
         [button setTitleColor:_buttonNormalColor forState:UIControlStateNormal];
-        [button setTitle:[_titlesForViewControllers objectAtIndex:i] forState:UIControlStateNormal];
+        [button setTitle:[_delegate DY_titleForViewControllerAtIndex:i]?:@"" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         [_buttonsArray addObject:button];
@@ -108,12 +106,14 @@
     
     [self addSubview:_scrollView];
     
-    NSArray *cvcs = [self.delegate DY_viewControllersInSlideView];
-    for (UIViewController *vc in cvcs) {
-        CGRect rect = _scrollView.bounds;
-        rect.origin.x = self.bounds.size.width * [cvcs indexOfObject:vc];
-        [vc.view setFrame:rect];
-        [_scrollView addSubview:vc.view];
+    for (NSInteger i = 0; i < _numberOfViewControllers; i++ ) {
+        UIViewController * vc = [_delegate DY_viewControllerAtIndex:i];
+        if (vc) {
+            CGRect rect = _scrollView.bounds;
+            rect.origin.x = self.bounds.size.width * i;
+            [vc.view setFrame:rect];
+            [_scrollView addSubview:vc.view];
+        }
     }
 }
 

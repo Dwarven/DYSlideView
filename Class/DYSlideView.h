@@ -13,8 +13,8 @@
 
 @required
 - (NSInteger)DY_numberOfViewControllersInSlideView;
-- (nonnull NSArray *)DY_titlesForViewControllersInSlideView;
-- (nonnull NSArray *)DY_viewControllersInSlideView;
+- (nonnull NSString *)DY_titleForViewControllerAtIndex:(NSInteger)index;
+- (nonnull UIViewController *)DY_viewControllerAtIndex:(NSInteger)index;
 
 @optional
 - (void)DY_didSelectButtonAtIndex:(NSInteger)index;

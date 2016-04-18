@@ -43,15 +43,28 @@
     return 4;
 }
 
-- (NSArray *)DY_titlesForViewControllersInSlideView {
-    return @[@"Tab1", @"Tab2", @"Tab3", @"Tab4"];
+- (NSString *)DY_titleForViewControllerAtIndex:(NSInteger)index{
+    return [NSString stringWithFormat:@"Tab%li",index];
 }
 
-- (NSArray *)DY_viewControllersInSlideView {
-    return @[[self vcWithBackgroundColor:[UIColor whiteColor]],
-             [self vcWithBackgroundColor:[UIColor grayColor]],
-             [self vcWithBackgroundColor:[UIColor darkGrayColor]],
-             [self vcWithBackgroundColor:[UIColor blackColor]]];
+- (UIViewController *)DY_viewControllerAtIndex:(NSInteger)index {
+    switch (index) {
+        case 0:
+            return [self vcWithBackgroundColor:[UIColor whiteColor]];
+            break;
+            
+        case 1:
+            return [self vcWithBackgroundColor:[UIColor grayColor]];
+            break;
+            
+        case 2:
+            return [self vcWithBackgroundColor:[UIColor darkGrayColor]];
+            break;
+            
+        default:
+            return [self vcWithBackgroundColor:[UIColor blackColor]];
+            break;
+    }
 }
 
 - (UIViewController *)vcWithBackgroundColor:(UIColor *)backgroundColor {
