@@ -115,24 +115,26 @@
 }
 
 - (void)addScrollView {
-    _scrollView = [[UIScrollView alloc] init];
-    [_scrollView setFrame:CGRectMake(0, _slideBarHeight, self.bounds.size.width, self.bounds.size.height - _slideBarHeight)];
-    [_scrollView setDirectionalLockEnabled:YES];
-    [_scrollView setPagingEnabled:YES];
-    [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width * _numberOfViewControllers, 0)];
-    [_scrollView setShowsHorizontalScrollIndicator:NO];
-    [_scrollView setDelegate:self];
-    [_scrollView setBounces:_scrollViewBounces];
-    
-    [self addSubview:_scrollView];
-    
-    for (NSInteger i = 0; i < _numberOfViewControllers; i++ ) {
-        UIViewController * vc = [_delegate DY_viewControllerAtIndex:i];
-        if (vc) {
-            CGRect rect = _scrollView.bounds;
-            rect.origin.x = self.bounds.size.width * i;
-            [vc.view setFrame:rect];
-            [_scrollView addSubview:vc.view];
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] init];
+        [_scrollView setFrame:CGRectMake(0, _slideBarHeight, self.bounds.size.width, self.bounds.size.height - _slideBarHeight)];
+        [_scrollView setDirectionalLockEnabled:YES];
+        [_scrollView setPagingEnabled:YES];
+        [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width * _numberOfViewControllers, 0)];
+        [_scrollView setShowsHorizontalScrollIndicator:NO];
+        [_scrollView setDelegate:self];
+        [_scrollView setBounces:_scrollViewBounces];
+        
+        [self addSubview:_scrollView];
+        
+        for (NSInteger i = 0; i < _numberOfViewControllers; i++ ) {
+            UIViewController * vc = [_delegate DY_viewControllerAtIndex:i];
+            if (vc) {
+                CGRect rect = _scrollView.bounds;
+                rect.origin.x = self.bounds.size.width * i;
+                [vc.view setFrame:rect];
+                [_scrollView addSubview:vc.view];
+            }
         }
     }
 }
