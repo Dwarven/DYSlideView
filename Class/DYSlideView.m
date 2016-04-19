@@ -169,6 +169,7 @@
     
     if (_currentBtnIndex != index) {
         _currentBtnIndex = index;
+        [self updateSelectedButton];
         for (UIButton *button in _buttonsArray) {
             if ([_buttonsArray indexOfObject:button] == _currentBtnIndex) {
                 [[_buttonsArray objectAtIndex:_currentBtnIndex] setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
@@ -177,10 +178,6 @@
             }
         }
     }
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self updateSelectedButton];
 }
 
 @end
