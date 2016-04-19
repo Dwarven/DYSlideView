@@ -31,17 +31,37 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _slideBarColor = [UIColor lightGrayColor];
-        _sliderColor = [UIColor redColor];;
-        _buttonNormalColor = [UIColor whiteColor];
-        _buttonSelectedColor = [UIColor blackColor];
-        _sliderScale = 1.f;
-        _slideBarHeight = 50.f;
-        _sliderHeight = 4.f;
-        _buttonTitleFont = [UIFont systemFontOfSize:16.f];
-        _scrollViewBounces = YES;
+        [self setupForInitialization];
     }
     return self;
+}
+
+- (id)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupForInitialization];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setupForInitialization];
+    }
+    return self;
+}
+
+- (void)setupForInitialization {
+    _slideBarColor = [UIColor lightGrayColor];
+    _sliderColor = [UIColor redColor];;
+    _buttonNormalColor = [UIColor whiteColor];
+    _buttonSelectedColor = [UIColor blackColor];
+    _sliderScale = 1.f;
+    _slideBarHeight = 50.f;
+    _sliderHeight = 4.f;
+    _buttonTitleFont = [UIFont systemFontOfSize:16.f];
+    _scrollViewBounces = YES;
 }
 
 - (void)layoutSubviews {
@@ -55,7 +75,7 @@
 
 - (void)addSlideBar {
     if (!_slideBar) {
-        _slideBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, _slideBarHeight)];
+        _slideBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, _slideBarHeight)];
         [_slideBar setBackgroundColor:_slideBarColor];
         [self addSubview:_slideBar];
     }
@@ -96,10 +116,10 @@
 
 - (void)addScrollView {
     _scrollView = [[UIScrollView alloc] init];
-    [_scrollView setFrame:CGRectMake(0, _slideBarHeight, self.bounds.size.width, self.frame.size.height - _slideBarHeight)];
+    [_scrollView setFrame:CGRectMake(0, _slideBarHeight, self.bounds.size.width, self.bounds.size.height - _slideBarHeight)];
     [_scrollView setDirectionalLockEnabled:YES];
     [_scrollView setPagingEnabled:YES];
-    [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width * _numberOfViewControllers, 0)];
+    [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width * _numberOfViewControllers, 0)];
     [_scrollView setShowsHorizontalScrollIndicator:NO];
     [_scrollView setDelegate:self];
     [_scrollView setBounces:_scrollViewBounces];
