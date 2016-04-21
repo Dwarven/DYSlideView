@@ -43,13 +43,14 @@ slideView.delegate = self;
 [self.view addSubview:slideView];
 
 //add delegate
-@interface YourClass () <DYSlideViewDelegate>
+@interface YourViewController () <DYSlideViewDelegate>
 @end
 
 //implement delegate
 @required
 - (NSInteger)DY_numberOfViewControllersInSlideView;
 - (nonnull NSString *)DY_titleForViewControllerAtIndex:(NSInteger)index;
+//You need to add the ViewController to YourViewController's childViewControllers.
 - (nonnull UIViewController *)DY_viewControllerAtIndex:(NSInteger)index;
 
 @optional
