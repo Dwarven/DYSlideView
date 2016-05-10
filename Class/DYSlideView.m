@@ -167,7 +167,7 @@
         index += 1;
     }
     
-    if (_currentBtnIndex != index) {
+    if (index < _numberOfViewControllers && _currentBtnIndex != index) {
         _currentBtnIndex = index;
         [self updateSelectedButton];
         for (UIButton *button in _buttonsArray) {
