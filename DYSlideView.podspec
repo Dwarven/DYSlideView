@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = 'DYSlideView'
-  s.version               = '0.0.4'
+  s.version               = '0.0.5'
   s.summary               = 'An iOS tabbed slide view.'
   s.homepage              = 'https://github.com/Dwarven/DYSlideView'
   s.ios.deployment_target = '7.0'
