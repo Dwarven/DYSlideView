@@ -13,8 +13,8 @@
 
 @required
 - (NSInteger)DY_numberOfViewControllersInSlideView;
-- (nonnull NSString *)DY_titleForViewControllerAtIndex:(NSInteger)index;
-- (nonnull UIViewController *)DY_viewControllerAtIndex:(NSInteger)index;
+- (NSString *)DY_titleForViewControllerAtIndex:(NSInteger)index;
+- (UIViewController *)DY_viewControllerAtIndex:(NSInteger)index;
 
 @optional
 - (void)DY_didSelectButtonAtIndex:(NSInteger)index;
@@ -24,18 +24,18 @@
 
 @interface DYSlideView : UIView
 
-@property (nonatomic, strong, nonnull) id <DYSlideViewDelegate> delegate;
+@property (nonatomic, weak) id <DYSlideViewDelegate> delegate;
 
-@property (strong, nonatomic, nonnull) UIColor *slideBarColor;
+@property (strong, nonatomic) UIColor *slideBarColor;
 @property (nonatomic) CGFloat slideBarHeight;
 
-@property (strong, nonatomic, nonnull) UIColor *sliderColor;
+@property (strong, nonatomic) UIColor *sliderColor;
 @property (nonatomic) CGFloat sliderHeight;
 @property (nonatomic) CGFloat sliderScale;
 
-@property (strong, nonatomic, nonnull) UIColor *buttonNormalColor;
-@property (strong, nonatomic, nonnull) UIColor *buttonSelectedColor;
-@property (strong, nonatomic, nonnull) UIFont *buttonTitleFont;
+@property (strong, nonatomic) UIColor *buttonNormalColor;
+@property (strong, nonatomic) UIColor *buttonSelectedColor;
+@property (strong, nonatomic) UIFont *buttonTitleFont;
 
 @property (nonatomic) BOOL scrollViewBounces;
 
