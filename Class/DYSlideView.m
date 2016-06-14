@@ -10,7 +10,6 @@
 
 @interface DYSlideView () <UIScrollViewDelegate> {
     NSInteger _numberOfViewControllers;
-    BOOL _didSelectItemAtIndexDefined;
     UIView * _slideBar;
     UIView * _slider;
     NSMutableArray *_buttonsArray;
@@ -22,11 +21,6 @@
 @end
 
 @implementation DYSlideView
-
-- (void)setDelegate:(id<DYSlideViewDelegate>)delegate {
-    _delegate = delegate;
-    _didSelectItemAtIndexDefined = [_delegate respondsToSelector:@selector(DY_didSelectButtonAtIndex:)];
-}
 
 - (id)init {
     self = [super init];
@@ -146,7 +140,7 @@
 - (void)updateSelectedButton{
     if (!(_selectedButton && [_buttonsArray indexOfObject:_selectedButton] == _currentBtnIndex)) {
         _selectedButton = [_buttonsArray objectAtIndex:_currentBtnIndex];
-        if (_didSelectItemAtIndexDefined) {
+        if (_delegate && [_delegate respondsToSelector:@selector(DY_didSelectButtonAtIndex:)]) {
             [self.delegate DY_didSelectButtonAtIndex:[_selectedButton tag]];
         }
     }
