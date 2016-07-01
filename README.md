@@ -38,6 +38,7 @@ slideView.buttonSelectedColor = [UIColor blackColor];
 slideView.buttonTitleFont = [UIFont boldSystemFontOfSize:16.f];
     
 slideView.scrollViewBounces = YES;
+slideView.scrollEnabled = YES;
     
 slideView.delegate = self;
 [self.view addSubview:slideView];
