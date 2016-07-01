@@ -38,6 +38,7 @@
 @property (strong, nonatomic) UIFont *buttonTitleFont;
 
 @property (nonatomic) BOOL scrollViewBounces;
+@property (nonatomic) BOOL scrollEnabled;
 
 
 @end

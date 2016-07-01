@@ -56,6 +56,7 @@
     _sliderHeight = 4.f;
     _buttonTitleFont = [UIFont systemFontOfSize:16.f];
     _scrollViewBounces = YES;
+    _scrollEnabled = YES;
 }
 
 - (void)layoutSubviews {
@@ -118,6 +119,7 @@
         [_scrollView setShowsHorizontalScrollIndicator:NO];
         [_scrollView setDelegate:self];
         [_scrollView setBounces:_scrollViewBounces];
+        [_scrollView setScrollEnabled:_scrollEnabled];
         
         [self addSubview:_scrollView];
         
