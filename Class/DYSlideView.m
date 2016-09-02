@@ -22,6 +22,20 @@
 
 @implementation DYSlideView
 
+- (void)dealloc{
+    _scrollView = nil;
+    _selectedButton = nil;
+    _slideBarButtons = nil;
+    _slider = nil;
+    _slideBar = nil;
+    _indexForDefaultItem = nil;
+    _slideBarColor = nil;
+    _sliderColor = nil;
+    _buttonNormalColor = nil;
+    _buttonSelectedColor = nil;
+    _buttonTitleFont = nil;
+}
+
 - (id)init {
     self = [super init];
     if (self) {
@@ -71,8 +85,8 @@
             [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:NO];
         } else {
             [self updateSelectedButton:nil];
-            [_selectedButton setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
         }
+        [_selectedButton setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
     }
 }
 
