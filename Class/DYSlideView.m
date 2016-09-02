@@ -65,8 +65,14 @@
         _numberOfViewControllers = [self.delegate DY_numberOfViewControllersInSlideView];
         [self addSlideBar];
         [self addScrollView];
-        [self updateSelectedButton:nil];
-        [_selectedButton setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
+        if (_indexForDefaultItem && [_slideBarButtons count] > [_indexForDefaultItem integerValue]) {
+            UIButton * button = [_slideBarButtons objectAtIndex:[_indexForDefaultItem integerValue]];
+            [self updateSelectedButton:button];
+            [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:NO];
+        } else {
+            [self updateSelectedButton:nil];
+            [_selectedButton setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
+        }
     }
 }
 

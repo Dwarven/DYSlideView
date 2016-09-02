@@ -34,6 +34,8 @@
     
     slideView.scrollViewBounces = YES;
     
+    slideView.indexForDefaultItem = @0;
+    
     slideView.delegate = self;
     [self.view addSubview:slideView];
     

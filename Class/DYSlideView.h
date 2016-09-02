@@ -26,6 +26,8 @@
 
 @property (nonatomic, weak) id <DYSlideViewDelegate> delegate;
 
+@property (strong, nonatomic) NSNumber *indexForDefaultItem;
+
 @property (strong, nonatomic) UIColor *slideBarColor;
 @property (nonatomic) CGFloat slideBarHeight;
 
