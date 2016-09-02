@@ -12,7 +12,7 @@
     NSInteger _numberOfViewControllers;
     UIView * _slideBar;
     UIView * _slider;
-    NSMutableArray *_buttonsArray;
+    NSMutableArray *_slideBarButtons;
     UIButton * _selectedButton;
     NSInteger _currentBtnIndex;
     UIScrollView *_scrollView;
@@ -61,11 +61,13 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _numberOfViewControllers = [self.delegate DY_numberOfViewControllersInSlideView];
-    [self addSlideBar];
-    [self addScrollView];
-    [self updateSelectedButton];
-    [_selectedButton setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
+    if (!_slideBarButtons) {
+        _numberOfViewControllers = [self.delegate DY_numberOfViewControllersInSlideView];
+        [self addSlideBar];
+        [self addScrollView];
+        [self updateSelectedButton:nil];
+        [_selectedButton setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
+    }
 }
 
 - (void)addSlideBar {
@@ -79,7 +81,7 @@
 }
 
 - (void)addButtons {
-    _buttonsArray = [NSMutableArray array];
+    _slideBarButtons = [NSMutableArray array];
     for (NSInteger i = 0; i < _numberOfViewControllers; i++) {
         
         CGFloat width = self.bounds.size.width / _numberOfViewControllers;
@@ -93,7 +95,7 @@
         [button setTitle:[_delegate DY_titleForViewControllerAtIndex:i]?:@"" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
-        [_buttonsArray addObject:button];
+        [_slideBarButtons addObject:button];
         [_slideBar addSubview:button];
     }
 }
@@ -136,12 +138,16 @@
 }
 
 - (void)buttonClicked:(UIButton *)button {
+    [self updateSelectedButton:button];
     [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:YES];
 }
 
-- (void)updateSelectedButton{
-    if (!(_selectedButton && [_buttonsArray indexOfObject:_selectedButton] == _currentBtnIndex)) {
-        _selectedButton = [_buttonsArray objectAtIndex:_currentBtnIndex];
+- (void)updateSelectedButton:(UIButton *)button{
+    if (button == nil && [_slideBarButtons count] > 0) {
+        button = [_slideBarButtons firstObject];
+    }
+    if (!(_selectedButton && [_slideBarButtons indexOfObject:_selectedButton] == [button tag])) {
+        _selectedButton = button;
         if (_delegate && [_delegate respondsToSelector:@selector(DY_didSelectButtonAtIndex:)]) {
             [self.delegate DY_didSelectButtonAtIndex:[_selectedButton tag]];
         }
@@ -165,15 +171,18 @@
     
     if (index < _numberOfViewControllers && _currentBtnIndex != index) {
         _currentBtnIndex = index;
-        [self updateSelectedButton];
-        for (UIButton *button in _buttonsArray) {
-            if ([_buttonsArray indexOfObject:button] == _currentBtnIndex) {
-                [[_buttonsArray objectAtIndex:_currentBtnIndex] setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
+        for (UIButton *button in _slideBarButtons) {
+            if ([_slideBarButtons indexOfObject:button] == _currentBtnIndex) {
+                [[_slideBarButtons objectAtIndex:_currentBtnIndex] setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
             } else {
                 [button setTitleColor:_buttonNormalColor forState:UIControlStateNormal];
             }
         }
     }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self updateSelectedButton:[_slideBarButtons objectAtIndex:_currentBtnIndex]];
 }
 
 @end
