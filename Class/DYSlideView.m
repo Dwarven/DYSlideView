@@ -14,7 +14,6 @@
     UIView * _slider;
     NSMutableArray *_slideBarButtons;
     UIButton * _selectedButton;
-    NSInteger _currentBtnIndex;
     UIScrollView *_scrollView;
 }
 
@@ -86,7 +85,7 @@
         } else {
             [self updateSelectedButton:nil];
         }
-        [_selectedButton setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
+        [[_slideBarButtons objectAtIndex:_currentSelectedIndex] setAttributedTitle:[_delegate DY_attributedtitleForViewControllerAtIndex:_currentSelectedIndex] forState:UIControlStateNormal];
     }
 }
 
@@ -110,9 +109,7 @@
         [button setFrame:CGRectMake( width * i, 5, width, 35)];
         [button setTag:i];
         [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
-        [button.titleLabel setFont:_buttonTitleFont];
-        [button setTitleColor:_buttonNormalColor forState:UIControlStateNormal];
-        [button setTitle:[_delegate DY_titleForViewControllerAtIndex:i]?:@"" forState:UIControlStateNormal];
+        [button setAttributedTitle:[_delegate DY_attributedtitleForViewControllerAtIndex:i] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         [_slideBarButtons addObject:button];
@@ -189,20 +186,16 @@
         index += 1;
     }
     
-    if (index < _numberOfViewControllers && _currentBtnIndex != index) {
-        _currentBtnIndex = index;
-        for (UIButton *button in _slideBarButtons) {
-            if ([_slideBarButtons indexOfObject:button] == _currentBtnIndex) {
-                [[_slideBarButtons objectAtIndex:_currentBtnIndex] setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
-            } else {
-                [button setTitleColor:_buttonNormalColor forState:UIControlStateNormal];
-            }
+    if (index < _numberOfViewControllers && _currentSelectedIndex != index) {
+        _currentSelectedIndex = index;
+        for ( NSInteger b = 0; b < [_slideBarButtons count]; b++) {
+            [_slideBarButtons[b] setAttributedTitle:[_delegate DY_attributedtitleForViewControllerAtIndex:b] forState:UIControlStateNormal];
         }
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self updateSelectedButton:[_slideBarButtons objectAtIndex:_currentBtnIndex]];
+    [self updateSelectedButton:[_slideBarButtons objectAtIndex:_currentSelectedIndex]];
 }
 
 @end
