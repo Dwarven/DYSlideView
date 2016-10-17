@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     DYSlideView *slideView = [[DYSlideView alloc] init];
+    [slideView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     [slideView setFrame:self.view.bounds];
     
     slideView.slideBarColor = [UIColor lightGrayColor];
@@ -26,7 +27,7 @@
     
     slideView.sliderColor = [UIColor redColor];
     slideView.sliderHeight = 2;
-    slideView.sliderScale = 0.6;
+//    slideView.sliderScale = 0.6;
     
     slideView.buttonNormalColor = [UIColor yellowColor];
     slideView.buttonSelectedColor = [UIColor blackColor];
@@ -45,8 +46,9 @@
     return 4;
 }
 
-- (NSString *)DY_titleForViewControllerAtIndex:(NSInteger)index{
-    return [NSString stringWithFormat:@"Tab%li",index];
+- (NSAttributedString *)DY_attributedtitleForViewControllerAtIndex:(NSInteger)index
+{
+    return [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"Tab%li",index] attributes:nil];
 }
 
 - (UIViewController *)DY_viewControllerAtIndex:(NSInteger)index {
