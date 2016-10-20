@@ -36,6 +36,8 @@
 @property (nonatomic) CGFloat sliderHeight;
 @property (nonatomic) CGFloat sliderScale;
 
+@property (nonatomic, strong) UIColor *separatorColor;
+
 @property (nonatomic) BOOL scrollViewBounces;
 @property (nonatomic) BOOL scrollEnabled;
 

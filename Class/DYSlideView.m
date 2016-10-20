@@ -13,6 +13,7 @@
     NSInteger _numberOfViewControllers;
     UIView * _slideBar;
     UIView * _slider;
+    UIView *_separator;
     NSMutableArray *_slideBarButtons, *_addedControllers;
     UIButton * _selectedButton;
     UIScrollView *_scrollView;
@@ -25,6 +26,8 @@
 
 - (void)dealloc
 {
+    _separator = nil;
+    _separatorColor = nil;
     _scrollView = nil;
     _selectedButton = nil;
     _slideBarButtons = nil;
@@ -114,6 +117,18 @@
         [button setFrame:CGRectMake( width * i, 5, width, 35)];
     }
     
+    if ( _initializating )
+    {
+        if ( _separatorColor )
+        {
+            _separator = [[UIView alloc] initWithFrame:CGRectZero];
+            [_separator setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+            [_separator setBackgroundColor:_separatorColor];
+            [_slideBar addSubview:_separator];
+        }
+    }
+    [_separator setFrame:CGRectMake(0, _slideBarHeight - _sliderHeight + 1, _slideBar.bounds.size.width, 1.0)];
+
     CGFloat buttonWidth = self.bounds.size.width / _numberOfViewControllers;
     CGFloat sliderWidth = buttonWidth * _sliderScale;
     

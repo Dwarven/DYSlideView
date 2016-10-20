@@ -22,6 +22,7 @@
     [slideView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     [slideView setFrame:self.view.bounds];
     
+    slideView.separatorColor = [UIColor yellowColor];
     slideView.slideBarColor = [UIColor lightGrayColor];
     slideView.slideBarHeight = 50;
     
