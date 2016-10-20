@@ -36,10 +36,6 @@
 @property (nonatomic) CGFloat sliderHeight;
 @property (nonatomic) CGFloat sliderScale;
 
-@property (strong, nonatomic) UIColor *buttonNormalColor;
-@property (strong, nonatomic) UIColor *buttonSelectedColor;
-@property (strong, nonatomic) UIFont *buttonTitleFont;
-
 @property (nonatomic) BOOL scrollViewBounces;
 @property (nonatomic) BOOL scrollEnabled;
 

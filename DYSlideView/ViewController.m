@@ -29,10 +29,6 @@
     slideView.sliderHeight = 2;
 //    slideView.sliderScale = 0.6;
     
-    slideView.buttonNormalColor = [UIColor yellowColor];
-    slideView.buttonSelectedColor = [UIColor blackColor];
-    slideView.buttonTitleFont = [UIFont boldSystemFontOfSize:16.f];
-    
     slideView.scrollViewBounces = YES;
     
     slideView.indexForDefaultItem = @0;

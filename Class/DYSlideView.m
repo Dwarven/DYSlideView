@@ -33,9 +33,6 @@
     _indexForDefaultItem = nil;
     _slideBarColor = nil;
     _sliderColor = nil;
-    _buttonNormalColor = nil;
-    _buttonSelectedColor = nil;
-    _buttonTitleFont = nil;
 }
 
 - (id)init
@@ -74,12 +71,9 @@
     _numberOfViewControllers = NSNotFound;
     _slideBarColor = [UIColor lightGrayColor];
     _sliderColor = [UIColor redColor];;
-    _buttonNormalColor = [UIColor whiteColor];
-    _buttonSelectedColor = [UIColor blackColor];
     _sliderScale = 1.f;
     _slideBarHeight = 50.f;
     _sliderHeight = 4.f;
-    _buttonTitleFont = [UIFont systemFontOfSize:16.f];
     _scrollViewBounces = YES;
     _scrollEnabled = YES;
 }
