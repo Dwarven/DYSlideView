@@ -174,22 +174,27 @@
         [vc.view setFrame:rect];
     }
     
-    if (_indexForDefaultItem && [_slideBarButtons count] > [_indexForDefaultItem integerValue])
-    {
-        UIButton * button = [_slideBarButtons objectAtIndex:[_indexForDefaultItem integerValue]];
-        [self updateSelectedButton:button];
-        [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:NO];
-    }
-    else
-    {
-        [self updateSelectedButton:nil];
-    }
-    
     if ( _initializating )
     {
+        if (_indexForDefaultItem && [_slideBarButtons count] > [_indexForDefaultItem integerValue])
+        {
+            UIButton * button = [_slideBarButtons objectAtIndex:[_indexForDefaultItem integerValue]];
+            [self updateSelectedButton:button];
+            [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:NO];
+        }
+        else
+        {
+            [self updateSelectedButton:nil];
+        }
+        
         [[_slideBarButtons objectAtIndex:_currentSelectedIndex] setAttributedTitle:[_delegate DY_attributedtitleForViewControllerAtIndex:_currentSelectedIndex] forState:UIControlStateNormal];
     }
-
+    // 04/11/2016 - inserito questo per tentare di gestire il refresh quando ruoti, dopo l'init
+    else if ( _selectedButton )
+    {
+        [self updateSelectedButton:_selectedButton];
+        [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * _selectedButton.tag, 0) animated:NO];
+    }
     _initializating = NO;
 }
 
