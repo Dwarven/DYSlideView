@@ -41,5 +41,6 @@
 @property (nonatomic) BOOL scrollViewBounces;
 @property (nonatomic) BOOL scrollEnabled;
 
+- (void)selectButtonWithIndex:(NSInteger)newIndex;
 
 @end

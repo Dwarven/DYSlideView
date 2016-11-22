@@ -37,6 +37,8 @@
     slideView.delegate = self;
     [self.view addSubview:slideView];
     
+    [slideView selectButtonWithIndex:1];
+    
 }
 
 - (NSInteger)DY_numberOfViewControllersInSlideView {

@@ -20,6 +20,8 @@
     BOOL _initializating;
 }
 
+- (void)_updateSelectedButton:(UIButton *)button;
+
 @end
 
 @implementation DYSlideView
@@ -179,12 +181,12 @@
         if (_indexForDefaultItem && [_slideBarButtons count] > [_indexForDefaultItem integerValue])
         {
             UIButton * button = [_slideBarButtons objectAtIndex:[_indexForDefaultItem integerValue]];
-            [self updateSelectedButton:button];
+            [self _updateSelectedButton:button];
             [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:NO];
         }
         else
         {
-            [self updateSelectedButton:nil];
+            [self _updateSelectedButton:nil];
         }
         
         [[_slideBarButtons objectAtIndex:_currentSelectedIndex] setAttributedTitle:[_delegate DY_attributedtitleForViewControllerAtIndex:_currentSelectedIndex] forState:UIControlStateNormal];
@@ -192,7 +194,7 @@
     // 04/11/2016 - inserito questo per tentare di gestire il refresh quando ruoti, dopo l'init
     else if ( _selectedButton )
     {
-        [self updateSelectedButton:_selectedButton];
+        [self _updateSelectedButton:_selectedButton];
         [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * _selectedButton.tag, 0) animated:NO];
     }
     _initializating = NO;
@@ -200,11 +202,11 @@
 
 - (void)buttonClicked:(UIButton *)button
 {
-    [self updateSelectedButton:button];
+    [self _updateSelectedButton:button];
     [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:YES];
 }
 
-- (void)updateSelectedButton:(UIButton *)button
+- (void)_updateSelectedButton:(UIButton *)button
 {
     if (button == nil && [_slideBarButtons count] > 0)
     {
@@ -216,6 +218,22 @@
         if (_delegate && [_delegate respondsToSelector:@selector(DY_didSelectButtonAtIndex:)])
         {
             [self.delegate DY_didSelectButtonAtIndex:[_selectedButton tag]];
+        }
+    }
+}
+
+- (void)selectButtonWithIndex:(NSInteger)newIndex
+{
+    [self layoutIfNeeded];
+    for ( UIButton *mButton in _slideBarButtons )
+    {
+        if ( mButton.tag == newIndex )
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self _updateSelectedButton:mButton];
+                [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * mButton.tag, 0) animated:NO];
+            });
+            return;
         }
     }
 }
@@ -249,7 +267,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [self updateSelectedButton:[_slideBarButtons objectAtIndex:_currentSelectedIndex]];
+    [self _updateSelectedButton:[_slideBarButtons objectAtIndex:_currentSelectedIndex]];
 }
 
 @end
