@@ -10,7 +10,9 @@
 #import "DYSlideView.h"
 
 @interface ViewController () <DYSlideViewDelegate>
-
+{
+    DYSlideView *slideView;
+}
 @end
 
 @implementation ViewController
@@ -18,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    DYSlideView *slideView = [[DYSlideView alloc] init];
+    slideView = [[DYSlideView alloc] init];
     [slideView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     [slideView setFrame:self.view.bounds];
     
@@ -36,9 +38,6 @@
     
     slideView.delegate = self;
     [self.view addSubview:slideView];
-    
-    [slideView selectButtonWithIndex:1];
-    
 }
 
 - (NSInteger)DY_numberOfViewControllersInSlideView {
@@ -53,9 +52,16 @@
 - (UIViewController *)DY_viewControllerAtIndex:(NSInteger)index {
     switch (index) {
         case 0:
-            return [self vcWithBackgroundColor:[UIColor whiteColor]];
-            break;
-            
+        {
+            UIViewController *newctl = [self vcWithBackgroundColor:[UIColor whiteColor]];
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn setBackgroundColor:[UIColor blueColor]];
+            [btn setTitle:@"Go 2" forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(didClickButtonGo2:) forControlEvents:UIControlEventTouchUpInside];
+            [btn setFrame:CGRectMake(50, 50, 150, 50)];
+            [newctl.view addSubview:btn];
+            return newctl;
+        }
         case 1:
             return [self vcWithBackgroundColor:[UIColor grayColor]];
             break;
@@ -84,4 +90,8 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)didClickButtonGo2:(id)sender
+{
+    [slideView selectButtonWithIndex:1];
+}
 @end

@@ -224,15 +224,21 @@
 
 - (void)selectButtonWithIndex:(NSInteger)newIndex
 {
-    for ( UIButton *mButton in _slideBarButtons )
+    if ( _initializating )
     {
-        if ( mButton.tag == newIndex )
+        _indexForDefaultItem = [NSNumber numberWithInteger:newIndex];
+    }
+    else
+    {
+        for ( UIButton *mButton in _slideBarButtons )
         {
-            _selectedButton = mButton;
-            _indexForDefaultItem = [NSNumber numberWithInteger:_selectedButton.tag];
-            [self setNeedsLayout];
-            [self layoutIfNeeded];
-            return;
+            if ( mButton.tag == newIndex )
+            {
+                _selectedButton = mButton;
+                [self setNeedsLayout];
+                [self layoutIfNeeded];
+                return;
+            }
         }
     }
 }
