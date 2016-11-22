@@ -224,15 +224,14 @@
 
 - (void)selectButtonWithIndex:(NSInteger)newIndex
 {
-    [self layoutIfNeeded];
     for ( UIButton *mButton in _slideBarButtons )
     {
         if ( mButton.tag == newIndex )
         {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self _updateSelectedButton:mButton];
-                [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * mButton.tag, 0) animated:NO];
-            });
+            _selectedButton = mButton;
+            _indexForDefaultItem = [NSNumber numberWithInteger:_selectedButton.tag];
+            [self setNeedsLayout];
+            [self layoutIfNeeded];
             return;
         }
     }
