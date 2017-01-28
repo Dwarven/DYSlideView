@@ -38,6 +38,7 @@
 @property (strong, nonatomic) UIColor *buttonNormalColor;
 @property (strong, nonatomic) UIColor *buttonSelectedColor;
 @property (strong, nonatomic) UIFont *buttonTitleFont;
+@property (strong, nonatomic) UIFont *buttonSelectedTitleFont;
 
 @property (nonatomic) BOOL scrollViewBounces;
 @property (nonatomic) BOOL scrollEnabled;

@@ -158,8 +158,15 @@
 }
 
 - (void)buttonClicked:(UIButton *)button {
+    [self configDefaultStyleForSlideBarButtons];
     [self updateSelectedButton:button];
     [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:YES];
+}
+
+- (void)configDefaultStyleForSlideBarButtons {
+    for (UIButton *button in _slideBarButtons) {
+        [button.titleLabel setFont:_buttonTitleFont];
+    }
 }
 
 - (void)updateSelectedButton:(UIButton *)button{
@@ -168,6 +175,8 @@
     }
     if (!(_selectedButton && [_slideBarButtons indexOfObject:_selectedButton] == [button tag])) {
         _selectedButton = button;
+        [_selectedButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        [_selectedButton.titleLabel setFont:_buttonSelectedTitleFont];
         if (_delegate && [_delegate respondsToSelector:@selector(DY_didSelectButtonAtIndex:)]) {
             [self.delegate DY_didSelectButtonAtIndex:[_selectedButton tag]];
         }
