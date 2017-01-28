@@ -158,15 +158,8 @@
 }
 
 - (void)buttonClicked:(UIButton *)button {
-    [self configDefaultStyleForSlideBarButtons];
     [self updateSelectedButton:button];
     [_scrollView setContentOffset:CGPointMake(self.bounds.size.width * button.tag, 0) animated:YES];
-}
-
-- (void)configDefaultStyleForSlideBarButtons {
-    for (UIButton *button in _slideBarButtons) {
-        [button.titleLabel setFont:_buttonTitleFont];
-    }
 }
 
 - (void)updateSelectedButton:(UIButton *)button{
@@ -203,7 +196,9 @@
         for (UIButton *button in _slideBarButtons) {
             if ([_slideBarButtons indexOfObject:button] == _currentBtnIndex) {
                 [[_slideBarButtons objectAtIndex:_currentBtnIndex] setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
+                [button.titleLabel setFont:_buttonSelectedTitleFont];
             } else {
+                [button.titleLabel setFont:_buttonTitleFont];
                 [button setTitleColor:_buttonNormalColor forState:UIControlStateNormal];
             }
         }
