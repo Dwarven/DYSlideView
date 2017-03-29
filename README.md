@@ -7,7 +7,7 @@
 
 An iOS tabbed slide view.
 
-#Preview
+# Preview
 ![DYSlideView Demo Gif](https://raw.githubusercontent.com/Dwarven/DYSlideView/master/demo.gif)
 
 # Podfile
