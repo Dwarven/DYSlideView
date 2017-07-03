@@ -168,6 +168,8 @@
     }
     if (!(_selectedButton && [_slideBarButtons indexOfObject:_selectedButton] == [button tag])) {
         _selectedButton = button;
+        [_selectedButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        [_selectedButton.titleLabel setFont:_buttonSelectedTitleFont];
         if (_delegate && [_delegate respondsToSelector:@selector(DY_didSelectButtonAtIndex:)]) {
             [self.delegate DY_didSelectButtonAtIndex:[_selectedButton tag]];
         }
@@ -194,7 +196,9 @@
         for (UIButton *button in _slideBarButtons) {
             if ([_slideBarButtons indexOfObject:button] == _currentBtnIndex) {
                 [[_slideBarButtons objectAtIndex:_currentBtnIndex] setTitleColor:_buttonSelectedColor forState:UIControlStateNormal];
+                [button.titleLabel setFont:_buttonSelectedTitleFont];
             } else {
+                [button.titleLabel setFont:_buttonTitleFont];
                 [button setTitleColor:_buttonNormalColor forState:UIControlStateNormal];
             }
         }
