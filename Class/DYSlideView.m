@@ -130,7 +130,7 @@
         }
     }
     [_separator setFrame:CGRectMake(0, _slideBarHeight - _sliderHeight + 1, _slideBar.bounds.size.width, 1.0)];
-
+    
     CGFloat buttonWidth = self.bounds.size.width / _numberOfViewControllers;
     CGFloat sliderWidth = buttonWidth * _sliderScale;
     
@@ -140,7 +140,7 @@
         [_slideBar addSubview:_slider];
         [_slider setBackgroundColor:_sliderColor];
     }
-    [_slider setFrame:CGRectMake((buttonWidth - sliderWidth)/2, _slideBarHeight-_sliderHeight, sliderWidth, _sliderHeight)];
+    [_slider setFrame:CGRectMake((buttonWidth - sliderWidth)/2, _slideBarHeight-_sliderHeight-1, sliderWidth, _sliderHeight)];
     
     if ( _initializating )
     {
@@ -251,7 +251,8 @@
     CGFloat sliderWidth = buttonWidth * _sliderScale;
     CGRect rect = _slider.frame;
     rect.origin.x = (contentOffset.x/self.bounds.size.width) * buttonWidth + (buttonWidth - sliderWidth)/2;
-    [_slider setFrame:rect];
+    [_slider setFrame:CGRectMake(rect.origin.x, _slideBarHeight-_sliderHeight-1, sliderWidth, _sliderHeight)];
+    
     
     CGFloat ratio = contentOffset.x/self.bounds.size.width;
     NSInteger index = (NSInteger)ratio;
