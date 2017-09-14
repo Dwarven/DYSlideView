@@ -237,6 +237,7 @@
                 _selectedButton = mButton;
                 [self setNeedsLayout];
                 [self layoutIfNeeded];
+                [self _updateSelectedButton:[_slideBarButtons objectAtIndex:newIndex]];
                 return;
             }
         }
