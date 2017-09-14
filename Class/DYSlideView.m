@@ -224,25 +224,24 @@
 
 - (void)selectButtonWithIndex:(NSInteger)newIndex
 {
-    if ( _initializating )
-    {
+    if ( _initializating ) {
         _indexForDefaultItem = [NSNumber numberWithInteger:newIndex];
     }
     else
     {
-        for ( UIButton *mButton in _slideBarButtons )
-        {
-            if ( mButton.tag == newIndex )
-            {
-                _selectedButton = mButton;
-                [self setNeedsLayout];
-                [self layoutIfNeeded];
-                [self _updateSelectedButton:[_slideBarButtons objectAtIndex:newIndex]];
+        for ( UIButton *mButton in _slideBarButtons ) {
+            if ( mButton.tag == newIndex ) {
+                
+                [self buttonClicked:mButton];
+                // _selectedButton = mButton;
+                // [self setNeedsLayout];
+                // [self layoutIfNeeded];
                 return;
             }
         }
     }
 }
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
