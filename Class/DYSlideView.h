@@ -13,7 +13,7 @@
 
 @required
 - (NSInteger)DY_numberOfViewControllersInSlideView;
-- (NSString *)DY_titleForViewControllerAtIndex:(NSInteger)index;
+- (NSAttributedString *)DY_attributedtitleForViewControllerAtIndex:(NSInteger)index;
 - (UIViewController *)DY_viewControllerAtIndex:(NSInteger)index;
 
 @optional
@@ -27,6 +27,7 @@
 @property (nonatomic, weak) id <DYSlideViewDelegate> delegate;
 
 @property (strong, nonatomic) NSNumber *indexForDefaultItem;
+@property (nonatomic, assign, readonly) NSInteger currentSelectedIndex;
 
 @property (strong, nonatomic) UIColor *slideBarColor;
 @property (nonatomic) CGFloat slideBarHeight;
@@ -35,12 +36,11 @@
 @property (nonatomic) CGFloat sliderHeight;
 @property (nonatomic) CGFloat sliderScale;
 
-@property (strong, nonatomic) UIColor *buttonNormalColor;
-@property (strong, nonatomic) UIColor *buttonSelectedColor;
-@property (strong, nonatomic) UIFont *buttonTitleFont;
+@property (nonatomic, strong) UIColor *separatorColor;
 
 @property (nonatomic) BOOL scrollViewBounces;
 @property (nonatomic) BOOL scrollEnabled;
 
+- (void)selectButtonWithIndex:(NSInteger)newIndex;
 
 @end
